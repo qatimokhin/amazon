@@ -6,10 +6,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by igortimokhin on 11/19/17.
- */
+
 public class amazon {
+
+//   Install a price comparison application on the test device.
+//   Select an electronics gadget
+//   Output the site’s rating of the item.
+
 
     private static AndroidDriver driver;
 
@@ -23,7 +26,7 @@ public class amazon {
 
         cap.setCapability("appPackage",
                 "com.amazon.mShop.android.shopping");
-        //adb -a " +ID+ " shell dumpsys window windows | grep mCurrentFocus
+
         cap.setCapability("appActivity",
                 "com.amazon.mShop.home.HomeActivity");
         driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
@@ -46,7 +49,6 @@ public class amazon {
         }
 
         System.out.println(driver.findElementByXPath("//android.widget.TextView[@index='5']").getText());
-
 
         driver.quit();
 
